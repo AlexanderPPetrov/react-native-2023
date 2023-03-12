@@ -5,6 +5,8 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "prettier:write": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
@@ -28,7 +30,13 @@
     "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4"
   },
   "private": true
 }

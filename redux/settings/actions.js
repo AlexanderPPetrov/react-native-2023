@@ -1,12 +1,10 @@
-import actionTypes from "./action-types";
-
+import actionTypes from './action-types';
 export function setSetting(payload) {
-    return {
-        type: actionTypes.SET_SETTING,
-        payload,
-    }
+  return {
+    type: actionTypes.SET_SETTING,
+    payload,
+  };
 }
-
 
 // export function setNotificationsEnabled(value) {
 //     return {
