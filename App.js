@@ -7,7 +7,7 @@ import configureStore from "./redux/configureStore";
 const store = configureStore();
 
 import Constants from 'expo-constants';
-import theme from "./theme";
+import theme from "./theme-dark";
 
 export default function App() {
   return (

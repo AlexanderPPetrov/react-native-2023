@@ -1,7 +1,7 @@
 import {View, Switch, StyleSheet, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import theme from "../theme";
+import theme from "../theme-dark";
 import {setSetting} from "../redux/settings/actions";
 export default function SettingItem({settingKey}) {
 

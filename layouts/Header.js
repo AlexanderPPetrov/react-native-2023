@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { useTranslation } from 'react-i18next';
 import { useSelector } from "react-redux";
-import theme from "../theme";
+import theme from "../theme-dark";
 export default function Header() {
     const { t } = useTranslation();
     const navigation = useNavigation();

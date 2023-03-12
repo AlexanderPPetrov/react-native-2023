@@ -6,7 +6,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import DrawerContent from './DrawerContent'
-import theme from "../theme";
+import theme from "../theme-dark";
 
 const Drawer = createDrawerNavigator();
 

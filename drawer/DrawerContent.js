@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import {useNavigation} from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
-import theme from "../theme";
+import theme from "../theme-dark";
 export default function DrawerContent({screens}) {
 
     const navigation = useNavigation()
