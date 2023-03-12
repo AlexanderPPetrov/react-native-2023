@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
-import theme from "../theme-dark";
+import {useTheme} from "../hooks/useTheme";
 
 export default function GradientBackground() {
+    const { theme } = useTheme()
+
     return (
         <LinearGradient
             colors={[theme.primary, theme.primaryDark]}

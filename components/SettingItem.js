@@ -1,9 +1,10 @@
 import {View, Switch, StyleSheet, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import theme from "../theme-dark";
 import {setSetting} from "../redux/settings/actions";
+import {useTheme} from "../hooks/useTheme";
 export default function SettingItem({settingKey}) {
+    const { theme } = useTheme()
 
     const { t } = useTranslation()
     const settings = useSelector(state => state.settings)
@@ -16,7 +17,7 @@ export default function SettingItem({settingKey}) {
         }))
     };
     return <View style={styles.container}>
-        <Text style={styles.settingLabel}>
+        <Text style={{ color: theme.textPrimary }}>
             {t(settingKey)}
         </Text>
         <Switch
@@ -34,7 +35,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    settingLabel: {
-        color: theme.textPrimary
-    }
 });

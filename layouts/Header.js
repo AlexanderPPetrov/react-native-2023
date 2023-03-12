@@ -3,9 +3,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { useTranslation } from 'react-i18next';
 import { useSelector } from "react-redux";
-import theme from "../theme-dark";
+import { useTheme } from "../hooks/useTheme";
+
 export default function Header() {
     const { t } = useTranslation();
+    const { theme } = useTheme();
     const navigation = useNavigation();
     const route = useRoute();
 
@@ -17,11 +19,13 @@ export default function Header() {
             <View style={styles.header}>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity onPress={onMenuPress}>
-                        <Ionicons name="menu" size={24} color="white" />
+                        <Ionicons name="menu"
+                                  size={24}
+                                  color={theme.textPrimary} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.center}>
-                    <Text style={styles.headerText}>
+                    <Text style={[styles.headerText, {color: theme.textPrimary}]}>
                         {t(route.name)}
                     </Text>
                 </View>
@@ -30,7 +34,8 @@ export default function Header() {
                         !notificationsEnabled ?
                         styles.disabledIcon : ''}
                               name="notifications"
-                              size={24} color="white" />
+                              size={24}
+                              color={theme.textPrimary} />
                 </View>
             </View>
         </>
@@ -44,7 +49,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerText: {
-        color: '#ffffff',
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 18,

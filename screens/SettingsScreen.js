@@ -1,4 +1,3 @@
-import { Text } from "react-native";
 import DefaultLayout from "../layouts/DefaultLayout";
 import SettingItem from "../components/SettingItem";
 export default function SettingsScreen({navigation}) {

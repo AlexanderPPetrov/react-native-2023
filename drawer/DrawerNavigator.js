@@ -6,11 +6,13 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import DrawerContent from './DrawerContent'
-import theme from "../theme-dark";
+import {useTheme} from "../hooks/useTheme";
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
+    const { theme } = useTheme()
+
     const screens = [
         {
             name: 'Home',

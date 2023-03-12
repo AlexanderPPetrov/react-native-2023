@@ -5,10 +5,10 @@ import {
 } from 'react-native';
 
 import {LinearGradient} from 'expo-linear-gradient';
-import theme from "../theme-dark";
-
+import { useTheme } from "../hooks/useTheme";
 
 export default function Container({children, containerStyle}) {
+    const { theme } = useTheme()
     return <ScrollView contentContainerStyle={[styles.container, containerStyle]}>
         <LinearGradient style={styles.gradient}
                         colors={[theme.primary, theme.primaryDark]}/>
