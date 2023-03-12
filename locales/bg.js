@@ -1,7 +1,10 @@
-const en = {
+const bg = {
     translation: {
         Home: 'Начало',
         Profile: 'Профил',
+        Settings: 'Настройки',
+        lightTheme: 'Светла тема',
+        notificationsEnabled: 'Нотификации'
     },
 }
-export default en
+export default bg

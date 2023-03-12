@@ -5,10 +5,11 @@ export function settings(state = {
     lightTheme: false,
 }, action) {
     switch(action.type) {
-        case actionTypes.SET_NOTIFICATIONS_ENABLED:
-            return {...state, notificationsOn: action.payload};
-        case actionTypes.SET_LIGHT_THEME:
-            return {...state, lightTheme: action.payload};
+        case actionTypes.SET_SETTING:
+            return {
+                ...state,
+                [action.payload.settingKey]: action.payload.value
+            };
         default:
             return state;
     }

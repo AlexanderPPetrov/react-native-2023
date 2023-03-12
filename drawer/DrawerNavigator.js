@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { Ionicons, EvilIcons } from '@expo/vector-icons';
+import { Ionicons, EvilIcons, FontAwesome } from '@expo/vector-icons';
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 import DrawerContent from './DrawerContent'
 import theme from "../theme";
 
@@ -14,7 +15,6 @@ export default function DrawerNavigator() {
         {
             name: 'Home',
             component: HomeScreen,
-            title: 'Начало',
             icon: <Ionicons name="home-outline"
                             size={20}
                             color={theme.textPrimary}/>,
@@ -25,8 +25,14 @@ export default function DrawerNavigator() {
                              size={26}
                              style={{paddingBottom: 3}}
                              color={theme.textPrimary}/>,
-            title: 'Профил',
             component: ProfileScreen,
+        },
+        {
+            name: 'Settings',
+            icon: <FontAwesome name="cogs"
+                             size={20}
+                             color={theme.textPrimary}/>,
+            component: SettingsScreen,
         },
     ]
 

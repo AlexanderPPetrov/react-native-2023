@@ -1,16 +1,15 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import {useNavigation} from "@react-navigation/native";
-import GradientBackground from "../components/GradientBackground";
+import { useTranslation } from "react-i18next";
 import theme from "../theme";
 export default function DrawerContent({screens}) {
 
     const navigation = useNavigation()
-
+    const { t } = useTranslation()
     const getItems = () => {
         return screens.map((screen, index) => {
             return <TouchableOpacity key={index}
                                      onPress={() => navigation.navigate(screen.name)}
-
                                      style={[
                                          styles.drawerItem,
                                          screen.name === navigation?.getCurrentRoute()?.name ?
@@ -20,7 +19,7 @@ export default function DrawerContent({screens}) {
                     {screen.icon}
                 </View>
                 <Text style={styles.drawerItemText}>
-                    {screen.title}
+                    {t(screen.name)}
                 </Text>
             </TouchableOpacity>
         })
