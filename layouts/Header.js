@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useRoute, useNavigation } from "@react-navigation/native";
+import { useTranslation } from 'react-i18next';
+
 import theme from "../theme";
 export default function Header() {
-
+    const { t } = useTranslation();
     const navigation = useNavigation();
+    const route = useRoute();
+
     const onMenuPress = () => navigation.toggleDrawer();
     return (
         <>
@@ -15,7 +19,9 @@ export default function Header() {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.center}>
-                    <Text style={styles.headerText}>Profile</Text>
+                    <Text style={styles.headerText}>
+                        {t(route.name)}
+                    </Text>
                 </View>
                 <View style={styles.buttonContainer}>
                     <Ionicons name="notifications" size={24} color="white" />

@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import DrawerNavigator from "./drawer/DrawerNavigator";
+import "./i18n.config";
 import Constants from 'expo-constants';
 import theme from "./theme";
 

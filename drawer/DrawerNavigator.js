@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import DrawerContent from './DrawerContent'
+import theme from "../theme";
 
 const Drawer = createDrawerNavigator();
 
@@ -14,11 +15,16 @@ export default function DrawerNavigator() {
             name: 'Home',
             component: HomeScreen,
             title: 'Начало',
-            icon: 'home-outline',
+            icon: <Ionicons name="home-outline"
+                            size={20}
+                            color={theme.textPrimary}/>,
         },
         {
             name: 'Profile',
-            icon: 'user',
+            icon: <EvilIcons name="user"
+                             size={26}
+                             style={{paddingBottom: 3}}
+                             color={theme.textPrimary}/>,
             title: 'Профил',
             component: ProfileScreen,
         },
